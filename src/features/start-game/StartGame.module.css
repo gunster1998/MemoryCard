@@ -1,0 +1,50 @@
+.videoBackground {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.videoBackground video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100vw;
+  min-height: 100vh;
+  width: auto;
+  height: auto;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.videoBackground .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  top: 40%;
+  width: 100%;
+  font-family: Radiance;
+}
+
+.buttonsStartGame {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+h1 {
+  font-family: Radiance;
+  font-weight: 900;
+}
+
+@media (max-width: 1150px) {
+  .videoBackground .content {
+    flex-direction: column;
+  }
+}

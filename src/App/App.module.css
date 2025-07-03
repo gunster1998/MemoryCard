@@ -1,0 +1,31 @@
+.globalScreen {
+}
+@font-face {
+  font-family: Radiance;
+  src: url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance.woff")
+      format("woff"),
+    url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Radiance;
+  src: url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-bold.woff")
+      format("woff"),
+    url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-bold.ttf")
+      format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Radiance;
+  src: url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-semibold.woff")
+      format("woff"),
+    url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance-semibold.ttf")
+      format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}

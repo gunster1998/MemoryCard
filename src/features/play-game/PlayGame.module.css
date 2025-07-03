@@ -1,0 +1,13 @@
+.imgCard {
+  width: 250px;
+}
+
+.bodrderCard {
+  background-color: tomato;
+  margin: 10px;
+}
+
+.bodyGame {
+  display: flex;
+  flex-wrap: wrap;
+}

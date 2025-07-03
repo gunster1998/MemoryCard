@@ -1,10 +1,10 @@
-interface Card {
+export interface Card {
   id: string;
   url: string;
   isSelected: boolean;
 }
 
-type StatusGame = "playing" | "gameover" | "win";
+type StatusGame = "idle" | "playing" | "end";
 
 export interface GameStateType {
   cards: Card[];

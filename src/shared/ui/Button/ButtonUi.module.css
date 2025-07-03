@@ -1,0 +1,23 @@
+.base {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fefefe;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-family: Radiance;
+  border: 3px solid rgba(255, 255, 255, 0.314);
+  max-width: 300px;
+  cursor: pointer;
+  background: transparent;
+
+  transition: transform 0.6s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+
+.delete {
+  background: red;
+}
+
+.base:hover {
+  transform: translate(0, -10px);
+  transition: transform 0.5s ease-in-out;
+}

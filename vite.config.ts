@@ -12,6 +12,7 @@ export default defineConfig({
       "@assets": resolve(__dirname, "src/assets"),
       "@entities": resolve(__dirname, "src/entities"),
       "@features": resolve(__dirname, "src/features"),
+      "@widgets": resolve(__dirname, "src/widgets"),
     },
   },
   build: {
