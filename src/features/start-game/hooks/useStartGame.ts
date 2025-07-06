@@ -1,22 +1,35 @@
 import { useGameContext } from "@/entities/GameState";
 import { StartGameService } from "../service/startGameService";
+import { fetchCardss } from "../api/featchCard";
+
 export const useStartGame = () => {
   const { gameState, setGameState } = useGameContext();
 
-  const initGame = async () => {
-    const response = await fetch(`https://api.opendota.com/api/heroStats`);
+  const initGame = async (
+    countCards: number,
+    setLoading: React.Dispatch<React.SetStateAction<null | number>>
+  ) => {
+    setLoading(countCards);
+    const cards = await fetchCardss();
 
-    const cards = await response.json();
+    if (!cards) {
+      console.error(" Каточки не получены");
+      return;
+    }
 
-    const cardObject = cards.map((card: any) => ({
-      id: crypto.randomUUID(),
-      url: `https://cdn.cloudflare.steamstatic.com${card.img.replace(
-        /\?$/,
-        ""
-      )}`,
-      isSelected: false,
-    }));
+    const cardObject = cards
+      .sort(() => Math.random() - 0.5)
+      .slice(0, countCards)
+      .map((card: { img: string }) => ({
+        id: crypto.randomUUID(),
+        url: `https://cdn.cloudflare.steamstatic.com${card.img.replace(
+          /\?$/,
+          ""
+        )}`,
+        isSelected: false,
+      }));
 
+    setLoading(countCards);
     setGameState(StartGameService.startGame(gameState, cardObject));
   };
 

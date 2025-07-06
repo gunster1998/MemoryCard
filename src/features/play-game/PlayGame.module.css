@@ -1,5 +1,14 @@
 .imgCard {
   width: 250px;
+  pointer-events: none;
+}
+
+.describeGame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: Radiance;
 }
 
 .bodrderCard {
@@ -10,4 +19,21 @@
 .bodyGame {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  font-size: 24px;
+}
+
+.buttonCard {
+  cursor: pointer;
+}
+
+.PlayGame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

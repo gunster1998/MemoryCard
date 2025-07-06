@@ -1,19 +1,15 @@
-import { error } from "console";
-
-export const fetchImages = async (count: number) => {
+export const fetchCardss = async () => {
   try {
-    const response = await fetch(
-      `https://dog.ceo/api/breeds/image/random/${count}`
-    );
+    const response = await fetch(`https://api.opendota.com/api/heroStats`);
 
     if (!response.ok) {
-      throw new Error(`Ошибка при загрузке изображений: ${response.status}`);
+      throw new Error(`Ошибка при загрузке карточек: ${response.status}`);
     }
 
     const data = await response.json();
 
-    return [...data.message];
+    return [...data];
   } catch {
-    console.error("Ошибка загрузки изображений:", error);
+    console.error("Ошибка загрузки карточек:", Error);
   }
 };
