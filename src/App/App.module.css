@@ -2,9 +2,10 @@
   background-image: url(https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react//home/heroes_full.jpg);
   background-size: cover;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   font-family: Radiance;
 }
+
 @font-face {
   font-family: Radiance;
   src: url("https://cdn.akamai.steamstatic.com/apps/dota2/fonts/radiance.woff")
