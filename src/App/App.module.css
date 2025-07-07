@@ -1,9 +1,11 @@
 .globalScreen {
   background-image: url(https://cdn.akamai.steamstatic.com/apps/dota2/images/dota_react//home/heroes_full.jpg);
   background-size: cover;
+  background-position: center;
   width: 100vw;
-  height: 100%;
-  font-family: Radiance;
+  min-height: 100svh;
+  min-height: 100vh;
+  font-family: Radiance, sans-serif;
 }
 
 @font-face {
