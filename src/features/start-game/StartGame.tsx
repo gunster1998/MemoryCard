@@ -1,5 +1,5 @@
 import styles from "./StartGame.module.css";
-import ButtonUi from "@/shared/ui/Button/ButtonUi";
+import ButtonUi from "@shared/ui/Button/ButtonUi";
 import { useStartGame } from "./hooks/useStartGame";
 import { useState } from "react";
 export const StartGame: React.FC = () => {

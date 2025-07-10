@@ -1,6 +1,6 @@
-import { GameStateType, useGameContext } from "@/entities/GameState";
+import { GameStateType, useGameContext, Card } from "@entities/GameState";
 import { GameStatusService } from "../service/GameStatusService";
-import { CardService } from "@/features/play-game/service/CardService";
+import { CardService } from "@features/play-game/service/CardService";
 
 export const usePlayGame = () => {
   const { gameState, setGameState } = useGameContext();
@@ -14,7 +14,7 @@ export const usePlayGame = () => {
   };
 
   const canSelectCard = (cardId: string): boolean => {
-    const card = gameState.cards.find((card) => card.id === cardId);
+    const card = gameState.cards.find((card: Card) => card.id === cardId);
     return card ? !card.isSelected : false;
   };
 

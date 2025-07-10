@@ -1,12 +1,13 @@
-import { useGameContext } from "@/entities/GameState";
+import { useGameContext, Card } from "@entities/GameState";
 import styles from "./PlayGame.module.css";
-import { usePlayGame } from "@/features/play-game/hooks/usePlayGame";
+import { usePlayGame } from "@features/play-game/hooks/usePlayGame";
 import { ImageLoader } from "./components/ImageLoader";
+
 export const PlayGame: React.FC = () => {
   const { gameState } = useGameContext();
   const { selectCard } = usePlayGame();
 
-  const renderListCards = gameState.cards.map((card) => (
+  const renderListCards = gameState.cards.map((card: Card) => (
     <button
       key={card.id}
       data-id={card.id}
