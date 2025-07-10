@@ -1,6 +1,6 @@
 import { useGameContext } from "@/entities/GameState";
 import { StartGameService } from "../service/startGameService";
-import { fetchCardss } from "../api/featchCard";
+import { fetchCards } from "../api/featchCard";
 
 export const useStartGame = () => {
   const { gameState, setGameState } = useGameContext();
@@ -10,7 +10,7 @@ export const useStartGame = () => {
     setLoading: React.Dispatch<React.SetStateAction<null | number>>
   ) => {
     setLoading(countCards);
-    const cards = await fetchCardss();
+    const cards = await fetchCards();
 
     if (!cards) {
       console.error(" Каточки не получены");

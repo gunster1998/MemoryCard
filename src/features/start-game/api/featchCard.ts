@@ -1,4 +1,4 @@
-export const fetchCardss = async () => {
+export const fetchCards = async () => {
   try {
     const response = await fetch(`https://api.opendota.com/api/heroStats`);
 
@@ -9,7 +9,8 @@ export const fetchCardss = async () => {
     const data = await response.json();
 
     return [...data];
-  } catch {
-    console.error("Ошибка загрузки карточек:", Error);
+  } catch (error) {
+    console.error("Ошибка загрузки карточек:", error);
+    throw error;
   }
 };

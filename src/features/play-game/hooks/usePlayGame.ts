@@ -1,30 +1,49 @@
-import { useGameContext } from "@/entities/GameState";
-import { PlayGameService } from "../service/playGameService";
+import { GameStateType, useGameContext } from "@/entities/GameState";
+import { GameStatusService } from "../service/GameStatusService";
+import { CardService } from "@/features/play-game/service/CardService";
 
 export const usePlayGame = () => {
   const { gameState, setGameState } = useGameContext();
 
-  const selectCard: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-    const target = e.target as HTMLButtonElement;
+  const extractCardId = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ): string | null => {
+    const target = event.target as HTMLButtonElement;
     const idElement = target.dataset.id;
-    if (!idElement) return;
-    console.log("нажал клавишу и вызвал функцию");
-    const foundCardIndex = gameState.cards.find(
-      (card) => card.id === idElement
-    );
-    if (!foundCardIndex?.isSelected) {
-      let newState = PlayGameService.updateCard(gameState, idElement);
-      newState = PlayGameService.mixedCard(newState);
-      if (newState.matchedCardsCount >= newState.cardCount) {
-        setGameState(PlayGameService.changeStatusGame(newState, "end"));
-      } else {
-        setGameState(newState);
-      }
+    return idElement || null;
+  };
+
+  const canSelectCard = (cardId: string): boolean => {
+    const card = gameState.cards.find((card) => card.id === cardId);
+    return card ? !card.isSelected : false;
+  };
+
+  const isGameCompleted = (state: GameStateType): boolean => {
+    return state.matchedCardsCount >= state.cardCount;
+  };
+
+  const handleValidCardSelection = (cardId: string): void => {
+    let newState = CardService.updateCard(gameState, cardId);
+    newState = CardService.mixedCard(newState);
+    if (isGameCompleted(newState)) {
+      setGameState(GameStatusService.changeStatusGame(newState, "end"));
     } else {
-      setGameState(PlayGameService.changeStatusGame(gameState, "end"));
+      setGameState(newState);
+    }
+  };
+  const selectCard: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+    const cardId = extractCardId(e);
+
+    if (!cardId) return;
+    console.log(cardId);
+    if (canSelectCard(cardId)) {
+      handleValidCardSelection(cardId);
+    } else {
+      setGameState(GameStatusService.changeStatusGame(gameState, "end"));
     }
   };
   return {
     selectCard,
+    gameState,
   };
 };

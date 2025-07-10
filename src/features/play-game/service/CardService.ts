@@ -1,16 +1,6 @@
 import { GameStateType } from "@entities/GameState";
 
-export const PlayGameService = {
-  changeStatusGame(
-    gameState: GameStateType,
-    statusGame: "idle" | "playing" | "end"
-  ): GameStateType {
-    return {
-      ...gameState,
-      statusGame: statusGame,
-    };
-  },
-
+export const CardService = {
   updateCard(gameState: GameStateType, id: string): GameStateType {
     return {
       ...gameState,
