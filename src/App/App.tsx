@@ -1,4 +1,4 @@
-import { GameStateProvider } from "@app/providers/GameStateContext";
+import { GameStateProvider } from "./providers/GameStateContext";
 import { MainGameScreen } from "@widgets/MainGameScreen/MainGameScreen";
 import styles from "./App.module.css";
 
