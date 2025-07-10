@@ -1,4 +1,4 @@
-import { useGameContext } from "@/entities/GameState";
+import { useGameContext } from "@entities/GameState";
 import { StartGameService } from "../service/startGameService";
 import { fetchCards } from "../api/featchCard";
 

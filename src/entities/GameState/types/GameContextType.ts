@@ -1,4 +1,4 @@
-import type { GameStateType } from "@/entities/GameState";
+import type { GameStateType } from "@entities/GameState";
 import { SetStateAction } from "react";
 
 export interface GameContextType {

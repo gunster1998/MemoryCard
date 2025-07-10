@@ -1,4 +1,4 @@
-import { useGameContext } from "@/entities/GameState";
+import { useGameContext } from "@entities/GameState";
 import { EndGameService } from "../service/endGameService";
 
 export const useEndGame = () => {

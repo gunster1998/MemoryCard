@@ -7,7 +7,6 @@ export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   resolve: {
     alias: {
-      "@": resolve(__dirname, "src"),
       "@app": resolve(__dirname, "src/app"),
       "@assets": resolve(__dirname, "src/assets"),
       "@entities": resolve(__dirname, "src/entities"),

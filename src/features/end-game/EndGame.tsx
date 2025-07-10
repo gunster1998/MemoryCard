@@ -1,5 +1,5 @@
 import style from "./EndGame.module.css";
-import { useGameContext } from "@/entities/GameState";
+import { useGameContext } from "@entities/GameState";
 import ButtonUi from "@shared/ui/Button/ButtonUi";
 import { useEndGame } from "./hook/useEndGame";
 export const EndGame: React.FC = () => {
