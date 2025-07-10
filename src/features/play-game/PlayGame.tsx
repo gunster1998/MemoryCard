@@ -1,7 +1,7 @@
 import { useGameContext } from "@/entities/GameState";
 import styles from "./PlayGame.module.css";
 import { usePlayGame } from "@/features/play-game/hooks/usePlayGame";
-import { ImageLoader } from "./components/imageLoader";
+import { ImageLoader } from "./components/ImageLoader";
 export const PlayGame: React.FC = () => {
   const { gameState } = useGameContext();
   const { selectCard } = usePlayGame();
